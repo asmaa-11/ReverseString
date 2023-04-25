@@ -34,7 +34,7 @@ INSERT INTO Training_details VALUES (12 ,3 ,2 ,"2015-08-02");
 INSERT INTO Training_details VALUES (13 ,1 ,1, "2015-08-02");
 INSERT INTO Training_details VALUES (14, 4, 3, "2015-08-03");
 -- fetch some values
-SELECT u.*,td.training_id,td.training_date ,count(training_id) as count  FROM Training_details td ,user u 
+SELECT u.*,td.training_id,td.training_date ,count(*) as count  FROM Training_details td ,user u 
  where u.user_id=td.user_id
  group by td.user_id,td.training_id,training_date
  having count >1
